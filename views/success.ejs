@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in success</title>
+    <link rel="stylesheet" href="/styles.css"/>
+</head>
+<body>
+    <header class="index-header">
+        <h1>Members Clubhouse</h1>
+    </header>
+    <main class="login-success-main">
+        <h2 class="login-success">Login Success</h2>
+        <p>User <%= user.firstname%> <%= user.lastname %> is now logged in.</p>
+        <p>Click here to go to <a href="/protected-route">protected page</a></p>
+    </main>
+    <footer class="success-footer">
+        <a href="/log-out">Log out</a>
+        <a href="/">Home</a>
+    </footer>
+</body>
+</html>

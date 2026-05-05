@@ -1,0 +1,1055 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@100..900&display=swap');
+
+
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+*:not(dialog) {
+  margin: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+html {
+    scrollbar-gutter: stable;
+    scroll-behavior: smooth;
+    overscroll-behavior: contain;
+}
+
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+p {
+  text-wrap: pretty;
+}
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+#root, #__next {
+  isolation: isolate;
+}
+
+body {
+    font-family: 'Jost', sans-serif;
+    color: #fff;
+    background: url('./assets/clubhouse.jpg') no-repeat center center/cover;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    min-block-size: 100svh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+    "header"
+    "main"
+    "footer";
+}
+
+/* 🔥 Overlay for readability */
+body::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: -1;
+}
+
+header {
+    background-color: rgb(29, 29, 65);
+
+}
+/* HEADER */
+.index-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+}
+
+.index-header h1 {
+    font-size: 28px;
+}
+
+.index-header h3 a {
+    text-decoration: none;
+    color: #fff;
+    margin-left: 15px;
+    transition: 0.3s;
+}
+
+.index-header h3 a:hover {
+    color: #f0c040;
+}
+
+/* MAIN CONTENT */
+.index-content {
+    text-align: center;
+    margin-top: 80px;
+    padding: 20px;
+}
+
+.index-content p:first-child {
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.index-content p:last-child {
+    font-size: 18px;
+    opacity: 0.85;
+}
+
+/* TEASER POSTS */
+.teaser {
+    margin: 40px auto;
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+}
+
+.post-card {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 15px;
+    border-radius: 10px;
+    margin: 15px 0;
+    text-align: left;
+    transition: 0.3s;
+}
+
+.post-card:hover {
+    background-color: #000;
+}
+
+.post-card button:hover {
+    background-color: #bfbf21;
+}
+
+.post-card button:active {
+    background-color: #7b7b42;
+}
+
+.post-card h3 {
+    margin-bottom: 8px;
+    font-weight: 700;
+    color: antiquewhite;
+}
+
+.post-card p {
+    font-size: 14px;
+}
+
+/* 🔥 Blur effect for teaser posts */
+.blur {
+    filter: blur(3px);
+    opacity: 0.7;
+}
+
+/* Lock label */
+.lock {
+    display: block;
+    margin-top: 10px;
+    font-size: 12px;
+    color: #f0c040;
+}
+
+/* CTA TEXT */
+body > h3 {
+    text-align: center;
+    margin-top: 20px;
+    font-weight: 400;
+}
+
+/* BUTTONS */
+button {
+    display: block;
+    margin: 15px auto;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    background: #f0c040;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 600;
+}
+
+button:hover {
+    background: #ffd966;
+}
+
+/* FORM (signup/login pages) */
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: auto;
+    margin-top: 100px;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+    gap: 15px; /* spacing between inputs */
+}
+
+label {
+    display: flex;
+    flex-direction: column; /* label text above input */
+    font-weight: 500;
+    font-size: 14px;
+}
+
+input {
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+    width: 100%;
+    font-size: 16px;
+}
+
+/* SPECIFIC BODY CLASSES */
+.signup-body form,
+.login-body form {
+    /* same styling already covered above */
+}
+
+/* HOME PAGE TEASER POSTS */
+.teaser .post-card {
+    cursor: default;
+}
+
+footer {
+    background-color: rgb(73, 70, 70);
+}
+
+.login-success{
+    color: green;
+}
+
+.login-success-main {
+background-color: whitesmoke;
+color: black
+}
+
+.success-footer {
+    background-color: rgb(73, 70, 70);
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 15px;
+}
+
+.success-footer a {
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.success-footer a:hover {
+    color: #f0c040;
+}
+
+.login-footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(73, 70, 70);
+}
+
+.signup-link button{
+    color: #000000;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.signup-link button:hover{
+    color: #158a34;
+}
+.signup-link{
+    text-align: center;
+    margin-top: 20px;
+    font-weight: 400;
+}
+.login-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.login-header a {
+    text-decoration: none;
+    color: antiquewhite;
+}
+.login-header h3{
+    color: #000000;
+    text-decoration: none;
+    transition: 0.3s;
+    padding: 2px;
+}
+.login-header h3:hover{
+    color: #158a34;
+}
+.signup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.signup-header a {
+    text-decoration: none;
+    color: antiquewhite;
+}
+.signup-header h3{
+    color: #000000;
+    text-decoration: none;
+    transition: 0.3s;
+    padding: 2px;
+}
+.signup-header h3:hover{
+    color: #158a34;
+}
+
+/* POST PAGE */
+.post-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.post-container {
+    background: rgba(0, 0, 0, 0.75);
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 700px;
+    width: 100%;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    backdrop-filter: blur(6px);
+}
+
+.post-title {
+    font-size: 32px;
+    margin-bottom: 10px;
+    color: #f0c040;
+}
+
+.post-meta {
+    font-size: 14px;
+    opacity: 0.8;
+    margin-bottom: 20px;
+}
+
+.post-body p {
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 25px;
+    text-decoration: none;
+    color: #f0c040;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.back-link:hover {
+    color: #ffd966;
+}
+
+/* PROTECTED ROUTE PAGE ONLY */
+.protected-body main {
+    width: 90%;
+    max-width: 800px;
+    margin: 40px auto;
+    text-align: center;
+}
+
+.protected-body form {
+    margin-top: 20px; /* override 100px global rule */
+    margin-bottom: 30px;
+    width: 100%;
+    max-width: 600px;
+}
+.index-header {
+    padding: 15px 30px;
+}
+
+.protected-body textarea,
+.protected-body select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+    font-size: 14px;
+}
+
+.protected-body .post-card {
+    margin: 20px 0;
+}
+.protected-body .post-card h3 {
+    margin-bottom: 8px;
+}
+
+.protected-body .post-card p {
+    margin-bottom: 10px;
+}
+
+.protected-body .join-membership {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #f0c040;
+    font-weight: 500;
+}
+
+.protected-body .post-card a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #f0c040;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.protected-body .post-card a:hover {
+    color: #ffd966;
+}
+.protected-body a.view-post {
+    display: inline-block;
+    margin-top: 10px;
+    color: #f0c040;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.protected-body a.view-post:hover {
+    color: #ffd966;
+}
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@100..900&display=swap');
+
+
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+*:not(dialog) {
+  margin: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+html {
+    scrollbar-gutter: stable;
+    scroll-behavior: smooth;
+    overscroll-behavior: contain;
+}
+
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+p {
+  text-wrap: pretty;
+}
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+#root, #__next {
+  isolation: isolate;
+}
+
+body {
+    font-family: 'Jost', sans-serif;
+    color: #fff;
+    background: url('./assets/clubhouse.jpg') no-repeat center center/cover;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    min-block-size: 100svh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+    "header"
+    "main"
+    "footer";
+}
+
+/* 🔥 Overlay for readability */
+body::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: -1;
+}
+
+header {
+    background-color: rgb(29, 29, 65);
+
+}
+/* HEADER */
+.index-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+}
+
+.index-header h1 {
+    font-size: 28px;
+}
+
+.index-header h3 a {
+    text-decoration: none;
+    color: #fff;
+    margin-left: 15px;
+    transition: 0.3s;
+}
+
+.index-header h3 a:hover {
+    color: #f0c040;
+}
+
+/* MAIN CONTENT */
+.index-content {
+    text-align: center;
+    margin-top: 80px;
+    padding: 20px;
+}
+
+.index-content p:first-child {
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.index-content p:last-child {
+    font-size: 18px;
+    opacity: 0.85;
+}
+
+/* TEASER POSTS */
+.teaser {
+    margin: 40px auto;
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+}
+
+.post-card {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 15px;
+    border-radius: 10px;
+    margin: 15px 0;
+    text-align: left;
+    transition: 0.3s;
+}
+
+.post-card:hover {
+    background-color: #000;
+}
+
+.post-card button:hover {
+    background-color: #bfbf21;
+}
+
+.post-card button:active {
+    background-color: #7b7b42;
+}
+
+.post-card h3 {
+    margin-bottom: 8px;
+    font-weight: 700;
+    color: antiquewhite;
+}
+
+.post-card p {
+    font-size: 14px;
+}
+
+/* 🔥 Blur effect for teaser posts */
+.blur {
+    filter: blur(3px);
+    opacity: 0.7;
+}
+
+/* Lock label */
+.lock {
+    display: block;
+    margin-top: 10px;
+    font-size: 12px;
+    color: #f0c040;
+}
+
+/* CTA TEXT */
+body > h3 {
+    text-align: center;
+    margin-top: 20px;
+    font-weight: 400;
+}
+
+/* BUTTONS */
+button {
+    display: block;
+    margin: 15px auto;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    background: #f0c040;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 600;
+}
+
+button:hover {
+    background: #ffd966;
+}
+
+/* FORM (signup/login pages) */
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: auto;
+    margin-top: 100px;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+    gap: 15px; /* spacing between inputs */
+}
+
+label {
+    display: flex;
+    flex-direction: column; /* label text above input */
+    font-weight: 500;
+    font-size: 14px;
+}
+
+input {
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+    width: 100%;
+    font-size: 16px;
+}
+/* ALL MEMBERS SECTION */
+.all-members {
+    margin: 40px auto;
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+}
+
+.all-members h3 {
+    margin-bottom: 15px;
+    color: #f0c040;
+    font-weight: 600;
+}
+
+/* Members list container */
+.all-members ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Each member item */
+.all-members li {
+    background: rgba(0, 0, 0, 0.6);
+    margin: 8px 0;
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: 0.3s;
+    font-size: 14px;
+}
+
+/* Hover effect */
+.all-members li:hover {
+    background: rgba(0, 0, 0, 0.85);
+}
+
+/* First + last name styling */
+.all-members li span:first-child {
+    font-weight: 600;
+    color: #f0c040;
+}
+
+.all-members li span:last-child {
+    color: #ddd;
+    margin-left: 4px;
+}
+/* SPECIFIC BODY CLASSES */
+.signup-body form,
+.login-body form {
+    /* same styling already covered above */
+}
+
+/* HOME PAGE TEASER POSTS */
+.teaser .post-card {
+    cursor: default;
+}
+
+footer {
+    background-color: rgb(73, 70, 70);
+}
+
+.login-success{
+    color: green;
+}
+
+.login-success-main {
+background-color: whitesmoke;
+color: black
+}
+
+.success-footer {
+    background-color: rgb(73, 70, 70);
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 15px;
+}
+
+.success-footer a {
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.success-footer a:hover {
+    color: #f0c040;
+}
+
+.login-footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(73, 70, 70);
+}
+
+.signup-link button{
+    color: #000000;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.signup-link button:hover{
+    color: #158a34;
+}
+.signup-link{
+    text-align: center;
+    margin-top: 20px;
+    font-weight: 400;
+}
+.login-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.login-header a {
+    text-decoration: none;
+    color: antiquewhite;
+}
+.login-header h3{
+    color: #000000;
+    text-decoration: none;
+    transition: 0.3s;
+    padding: 2px;
+}
+.login-header h3:hover{
+    color: #158a34;
+}
+.signup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.signup-header a {
+    text-decoration: none;
+    color: antiquewhite;
+}
+.signup-header h3{
+    color: #000000;
+    text-decoration: none;
+    transition: 0.3s;
+    padding: 2px;
+}
+.signup-header h3:hover{
+    color: #158a34;
+}
+
+/* POST PAGE */
+.post-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.post-container {
+    background: rgba(0, 0, 0, 0.75);
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 700px;
+    width: 100%;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    backdrop-filter: blur(6px);
+}
+
+.post-title {
+    font-size: 32px;
+    margin-bottom: 10px;
+    color: #f0c040;
+}
+
+.post-meta {
+    font-size: 14px;
+    opacity: 0.8;
+    margin-bottom: 20px;
+}
+
+.post-body p {
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 25px;
+    text-decoration: none;
+    color: #f0c040;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.back-link:hover {
+    color: #ffd966;
+}
+
+/* PROTECTED ROUTE PAGE ONLY */
+.protected-body main {
+    width: 90%;
+    max-width: 800px;
+    margin: 40px auto;
+    text-align: center;
+}
+
+.protected-body form {
+    margin-top: 20px; /* override 100px global rule */
+    margin-bottom: 30px;
+    width: 100%;
+    max-width: 600px;
+}
+.index-header {
+    padding: 15px 30px;
+}
+
+.protected-body textarea,
+.protected-body select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+    font-size: 14px;
+}
+
+.protected-body .post-card {
+    margin: 20px 0;
+}
+.protected-body .post-card h3 {
+    margin-bottom: 8px;
+}
+
+.protected-body .post-card p {
+    margin-bottom: 10px;
+}
+
+.protected-body .join-membership {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #f0c040;
+    font-weight: 500;
+}
+
+.protected-body .post-card a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #f0c040;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.protected-body .post-card a:hover {
+    color: #ffd966;
+}
+.protected-body a.view-post {
+    display: inline-block;
+    margin-top: 10px;
+    color: #f0c040;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.protected-body a.view-post:hover {
+    color: #ffd966;
+}
+
+/* AUTHOR NAME STYLING */
+.post-author {
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.first-name {
+    font-weight: 600;
+    color: #f0c040;
+}
+
+.last-name {
+    font-weight: 400;
+    color: #ddd;
+    margin-left: 4px;
+}
+
+/* 🔒 Blur for non-members */
+.blur-text {
+    filter: blur(4px);
+    opacity: 0.6;
+    user-select: none;
+}
+
+/* ADMIN PAGE ONLY */
+.admin-body main {
+    width: 90%;
+    max-width: 900px;
+    margin: 40px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.admin-body main > div {
+    background: rgba(0, 0, 0, 0.65);
+    padding: 20px;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.admin-body main > div:hover {
+    background: rgba(0, 0, 0, 0.85);
+}
+
+.admin-body h3 {
+    margin-bottom: 10px;
+    color: #f0c040;
+    font-weight: 600;
+}
+
+.admin-body h4 {
+    margin-bottom: 10px;
+}
+.admin-body hr {
+    border: none;
+    height: 1px;
+    background: rgba(255,255,255,0.2);
+    margin-top: 10px;
+}
+.admin-body form {
+    margin: 10px 0 0 0;   /* remove huge spacing */
+    max-width: 100%;
+}
+.admin-body input[type="text"] {
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+    font-size: 14px;
+}
+
+.admin-body input[type="submit"] {
+    background: #f0c040;
+    color: #000;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.admin-body input[type="submit"]:hover {
+    background: #ffd966;
+}
+.admin-body .index-header {
+    justify-content: center;
+}
+
+.admin-body .index-header h1 {
+    font-size: 26px;
+    text-align: center;
+}
+
+/* ADMIN HEADER LINKS */
+.admin-links {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    padding: 10px 0 15px 0;
+}
+
+.admin-links a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.admin-links a:hover {
+    background-color: #f0c040;
+    color: #000;
+}

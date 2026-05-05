@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%=post.firstname %> <%= post.lastname %>'s Post</title>
+     <link rel="stylesheet" href="/styles.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@100..900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+    <div class="index-header">
+        <h1>Members Clubhouse</h1>
+        <h3>
+            <a href="/log-out">Logout</a>
+        </h3>
+    </div>
+    </header>
+    <main class="post-page">
+        <div class="post-container">
+            <h1 class="post-title"><%= post.title %></h1>
+
+            <p class="post-meta">
+            By <strong><%= post.firstname %> <%= post.lastname %></strong>
+            </p>
+
+            <div class="post-body">
+            <p><%= post.content %></p>
+            </div>
+
+            <a href="/protected-route" class="back-link">← Back to posts</a>
+        </div>
+    </main>
+    <footer style="display: flex; justify-content: flex-start; gap: 2rem">
+    <div class="top-posts"></div>
+    <p style="font-weight: bold;">Get VIP membership for an exclusive experience.</p>
+    <p>Copyright cc 2026</p>
+</footer>
+</body>
+</html>

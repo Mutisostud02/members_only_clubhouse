@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Members Clubhouse</title>
+    <link rel="stylesheet" href="styles.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body class="protected-body">
+    <header>
+        <div class="index-header">
+            <h1>Members Clubhouse</h1>
+            <h3>
+                <% if(user.isadmin) {%>
+                    <a href="/admin">Admin</a>
+                    <a href="/log-out">Logout</a>
+                <%} else {%>
+                    <a href="/log-out">Logout</a>
+                <%}%>
+            </h3>
+        </div>
+    </header>
+<main>
+    <!-- show posts -->
+     <h1>Welcome to the VIP Members Clubhouse</h1>
+     <p>Logged in as <%= user.firstname%> <%= user.lastname %>.</p>
+     <% if(user.membership_status) { %>
+        <form action="/protected-route" method="POST">
+        <select name="topic">
+            <option value="">Select topic</option>
+            <option value="Clubhouse">Clubhouse</option>
+            <option value="Sports">Sports</option>
+            <option value="Technology">Technology</option>
+            <option value="Art">Art</option>
+            <option value="Business">Business</option>
+            <option value="Career">Career</option>
+            <option value="Cooking">Cooking</option>
+            <option value="Gaming">Gaming</option>
+            <option value="Health & Fitness">Health & Fitness</option>
+            <option value="Politics">Politics</option>
+            <option value="Adventure">Adventure</option>
+        </select>
+        <label for="message">Enter New Message</label>
+        <textarea rows="5" cols="20" name="post"></textarea>
+        <input type="submit" value="Send Post">
+     </form>
+     <%} else{%>
+        <p class="join-membership">Become a VIP to send posts.</p>
+     <%}%>
+     
+     <% if(posts && posts.length > 0) { %>
+        <% posts.forEach((post) => { %>
+            <div class="post-card">
+                <% if(user.membership_status) { %>
+                    <h3><%= post.title %></h3>
+                    
+                    <h4 class="post-author">
+                        <span class="first-name <%= !user.membership_status ? 'blur-text' : '' %>">
+                            <%= post.firstname %>
+                        </span>
+                        <span class="last-name <%= !user.membership_status ? 'blur-text' : '' %>">
+                            <%= post.lastname %>
+                        </span>
+                    </h4>
+                    <p class="post-content"><%= post.content %></p>
+                    <a href="/protected-route/<%= post.id %>" class="view-post-btn">View post</a>
+                <% } else {%>
+                    <h3><%= post.title %></h3>
+                    <h4 class="post-author">
+                        <span class="first-name <%= !user.membership_status ? 'blur-text' : '' %>">
+                            <%= post.firstname %>
+                        </span>
+                        <span class="last-name <%= !user.membership_status ? 'blur-text' : '' %>">
+                            <%= post.lastname %>
+                        </span>
+                    </h4>
+                    <p class="post-content"><%= post.content %></p>
+                    <span class="lock">🔒 Members only</span>
+                    <a href="/membership" class="view-post">Become a member to view post</a>
+                <% } %>
+                </div>
+        <% }) %>
+        <% } %>
+    
+     <p>Get a VIP membership to view posts</p>  
+    
+</main>
+<footer style="display: flex; justify-content: flex-start; gap: 2rem">
+    <div class="top-posts"></div>
+    <p style="font-weight: bold;">Get VIP membership for an exclusive experience.</p>
+    <p>Copyright cc 2026</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Members Clubhouse</title>
+    <link rel="stylesheet" href="styles.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body class="admin-body">
+    <header>
+    <div class="index-header">
+        <h1>VIP Members Clubhouse Admin Page</h1>
+    </div>
+    <div class="admin-links">
+        <a href="/">Home</a>
+        <a href="/protected-route">Profile</a>
+        <a href="/log-out">log-out</a>
+    </div>
+</header>
+<main>
+    <div class="admin-members">
+        <h3>View Group Members</h3>
+        <hr>
+        <% users.forEach(user => { %>
+            <p><%=user.firstname%> <%=user.lastname%></p>
+        <% }); %>
+        <hr>
+    </div>
+    <div class="admin-code-requests">
+        <h3>Review Code Requests</h3>
+        <hr>
+    </div>
+    <div class="admin-view-codes">
+        <h3>View available codes</h3>
+        <hr>
+        <ul>
+            <% codes.forEach(code => { %>            
+                <li><%= code.code%></li>
+            <% }); %>
+        </ul>
+        <hr>
+    </div>
+    <div class="admin-generate-codes">
+        <form action="/admin" method="POST">
+            <h4>Generate New Passcodes</h4>
+            <input name="passcode" type="text" required/>
+            <input value="Enter New Passcode" type="submit"/>        
+        </form>
+        <hr>
+    </div>
+</main>
+<footer>
+    
+</footer>
+</body>
+</html>

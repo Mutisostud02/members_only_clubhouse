@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Members Clubhouse</title>
+    <link rel="stylesheet" href="styles.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body class="index-body">
+    <header>
+    <div class="index-header">
+        <h1>VIP Members Clubhouse</h1>
+        <h3><a href="/sign-up">Sign Up</a> / <a href="/log-in">Log In</a></h3>
+    </div>
+</header>
+<main>
+    <div class="index-content">
+        <p>Welcome to the VIP Members Clubhouse</p>
+        <p>Join a private space where members share exclusive messages and ideas.</p>
+    </div>
+    <div class="teaser">
+    <h3>🔒 Members Only Posts</h3>
+
+    <div class="post-card">
+        <h4>Top Secret Strategy</h4>
+        <p class="blur">This strategy reveals how members are growing...</p>
+        <span class="lock">🔒 Members only</span>
+    </div>
+
+    <div class="post-card">
+        <h4>Weekly Discussion</h4>
+        <p class="blur">This week we explored powerful ideas about...</p>
+        <span class="lock">🔒 Members only</span>
+    </div>
+    <div class="all-members">
+        <h3>VIP Clubhouse Members</h3>
+        <%if(users.length > 0) {%>
+            <ul>
+                <% users.forEach(user => { %>
+                    <li>
+                        <span><%= user.firstname %></span>
+                        <span><%= user.lastname %></span>
+                    </li>
+                <% }); %>
+            </ul>
+        <%} else {%>
+            <p>No Members!</p>
+        <%}%>
+
+    </div>
+</main>
+<footer>
+    <h3>Sign up, enter the secret code, and unlock full access to all posts.</h3>
+    <button><a href="/sign-up">Join the Club</a></button>
+    <button><a href="/log-in">Log In</a></button>
+</footer>
+</body>
+</html>

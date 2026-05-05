@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIP Membership</title>
+</head>
+<body>
+    <form method="POST" action="/membership">
+        <h3>Enter Passcode To obtain VIP Membership</h3>
+        <input type="text" name="passcode">
+        <input type="submit" value="Submit">
+    </form>
+    <% if(error === 'invalid_passcode') { %>
+        <p class="error">Invalid passcode!</p>
+    <%}%>
+    <button>Request Code From Admin</button
+    
+</body>
+</html>
