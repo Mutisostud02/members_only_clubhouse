@@ -8,7 +8,7 @@ const verifyCallback = async (email, password, done) => {
         const user = await getUserByEmail(email);
 
         if(!user) {
-            return done(null, false, {message: "Invalid email"})
+            return done(null, false, {message: "PASSPORT_EMAIL_NOT_FOUND"})
         }
 
         const match = await bcrypt.compare(password, user.password)
@@ -16,7 +16,8 @@ const verifyCallback = async (email, password, done) => {
         if(!match) {
             return done(null, false, {message: "Invalid password"})
         }
-        
+        console.log("EMAIL RECEIVED:", email);
+        console.log("PASSWORD RECEIVED:", password);
        return done(null, user)
 
     } catch (err){

@@ -3,7 +3,7 @@ const { body, validationResult } = require('express-validator')
 const loginValidation = [
     body('email')
     .isEmail()
-    .withMessage('Invalid email')
+    .withMessage('VALIDATOR_EMAIL_FAILED')
     .normalizeEmail(), 
     
     body('password')
