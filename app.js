@@ -29,7 +29,7 @@ require('./config/passport.js')
 
 app.use(passport.session())
 
-const PORT = process.env.PORT
+const PORT = process.env.PORT || 3000;
 
 app.use(Express.static(path.join(__dirname, 'public')))
 app.use(Express.urlencoded({extended: true}))
