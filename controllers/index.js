@@ -85,4 +85,4 @@ async function adminAddPasscodes(req, res) {
     }
 
 }
-module.exports = { indexHomePage, loginSuccess, logOut, membershipPage, applyMembership, adminPageController, adminAddPasscode}
+module.exports = { indexHomePage, loginSuccess, logOut, membershipPage, applyMembership, adminPageController, adminAddPasscodes}
