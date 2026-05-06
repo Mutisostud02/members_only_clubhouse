@@ -65,6 +65,7 @@
                     </h4>
                     <p class="post-content"><%= post.content %></p>
                     <a href="/protected-route/<%= post.id %>" class="view-post-btn">View post</a>
+                    <p class="post-date"><%= post.date %></p>
                 <% } else {%>
                     <h3><%= post.title %></h3>
                     <h4 class="post-author">
