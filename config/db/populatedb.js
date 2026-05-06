@@ -44,8 +44,11 @@ ON CONFLICT (email) DO NOTHING;
 
 async function main() {
     console.log("seeding...");
-    const client = new Client( {
-        connectionString: process.env.DATABASE_URL
+    const client = new Client({
+        connectionString: process.env.DATABASE_URL,
+        ssl: {
+            rejectUnauthorized: false
+        }
     })
     try {
         await client.connect();

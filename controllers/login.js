@@ -20,7 +20,7 @@ function loginController(req, res, next) {
             data: req.body
         })
     }
-
+    console.log("DB URL:", process.env.DATABASE_URL)
     next()
 }
 
