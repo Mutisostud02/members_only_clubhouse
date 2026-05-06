@@ -1,5 +1,4 @@
-const { getUsers, confirmPasscode, adminAddPasscodes, adminAvailabledPasscodes } = require('../config/db/query')
-const { indexHomePage, loginSuccess, logOut, applyMembership, membershipPage, adminPageController } = require('../controllers')
+const { indexHomePage, loginSuccess, logOut, applyMembership, membershipPage, adminPageController, adminAddPasscodes } = require('../controllers')
 
 const indexRoute = require('express').Router()
 
