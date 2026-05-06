@@ -1,4 +1,4 @@
-const { getAllPosts, getPostById } = require("../config/db/query")
+const { getAllPosts, getPostById, addNewPost } = require("../config/db/query")
 
 
 async function protectedRouteUserPage(req, res) {
