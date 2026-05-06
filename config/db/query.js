@@ -40,7 +40,6 @@ async function getPostById(id) {
         const { rows } = await pool.query(`
             SELECT * FROM posts
             INNER JOIN users ON posts.user_id = users.id WHERE posts.id = $1`, [id]);
-            console.log(rows)
         return rows[0]
 
     } catch (err) {

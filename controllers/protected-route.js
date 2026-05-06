@@ -7,7 +7,6 @@ async function protectedRouteUserPage(req, res) {
     }
     try {
         const posts = await getAllPosts()
-        console.log('Posts', posts)
         res.render('protected-route', {
             user: req.user,
             posts: posts,
@@ -44,7 +43,6 @@ async function protectedRouteGetPostById(req, res) {
         if (!post) {
             return res.status(404).send('Post not found');
         }
-        console.log(post)
         res.render('post', {
             user: req.user,
             post

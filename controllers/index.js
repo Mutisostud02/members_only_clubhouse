@@ -3,7 +3,6 @@ const { getUsers, confirmPasscode, adminAvailabledPasscodes, adminAddPasscode } 
 async function indexHomePage(req, res) {
     try {
         const users = await getUsers();
-        console.log( users)
         res.render('index', {users})
     } catch (err) {
         console.error(err) 
