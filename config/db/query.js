@@ -19,8 +19,11 @@ async function addUser(firstname, lastname, email, password ) {
 
 async function getUserByEmail(email) {
 try {
-    const { rows } = await pool.query('SELECT * FROM users WHERE email = $1' , [email])
-    return rows[0];
+    const { rows } = await pool.query('SELECT * FROM users WHERE LOWER(email) = LOWER($1)', [email.trim()]);
+    console.log("EMAIL INPUT:", `[${email}]`);
+    console.log("ROWS:", rows);
+    return rows[0]
+
 } catch(err) {
     throw err;
 }
